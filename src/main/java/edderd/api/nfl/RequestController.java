@@ -1,5 +1,7 @@
 package edderd.api.nfl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,4 +26,38 @@ public class RequestController {
                 .orElse(ResponseEntity.notFound().build());
     }  
     
+    @Autowired
+    private NFLNewsService nflNewsService;
+
+    @GetMapping("/NFLNews")
+    public List<NewsItem> getNFLNews() {
+        return nflNewsService.getTopNFLNews();
+    }
+    
+    @Autowired
+    private NFLWeeklyGameService nflGameService;
+
+    @GetMapping("/NFLGames")
+    public ResponseEntity<List<GameInfo>> getNFLGames(@RequestParam int week) {
+        try {
+            List<GameInfo> games = nflGameService.getGamesForWeek(week);
+            return ResponseEntity.ok(games);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    } 
+        @Autowired
+        private NFLLiveGameService nflScoreService;
+
+        // Your existing endpoints...
+
+        @GetMapping("/NFLScores")
+        public ResponseEntity<List<GameScore>> getNFLScores(@RequestParam int week) {
+            try {
+                List<GameScore> scores = nflScoreService.getScoresForWeek(week);
+                return ResponseEntity.ok(scores);
+            } catch (IllegalArgumentException e) {
+                return ResponseEntity.badRequest().build();
+            }
+    }
 }

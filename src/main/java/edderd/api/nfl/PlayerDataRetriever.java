@@ -1,6 +1,5 @@
 package edderd.api.nfl;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.core.io.ClassPathResource;
@@ -9,11 +8,9 @@ import org.springframework.stereotype.Service;
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.io.File;
 
 @Service
 public class PlayerDataRetriever {
