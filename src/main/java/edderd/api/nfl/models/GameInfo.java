@@ -1,4 +1,4 @@
-package edderd.api.nfl;
+package edderd.api.nfl.models;
 
 public class GameInfo {
     private String gameTime;

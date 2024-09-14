@@ -1,6 +1,8 @@
-package edderd.api.nfl;
+package edderd.api.nfl.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import edderd.api.nfl.models.PlayerData;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;

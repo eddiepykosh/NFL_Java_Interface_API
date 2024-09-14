@@ -8,6 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import edderd.api.nfl.models.GameInfo;
+import edderd.api.nfl.models.GameScore;
+import edderd.api.nfl.models.NewsItem;
+import edderd.api.nfl.models.PlayerData;
+import edderd.api.nfl.models.ResponseManager;
+import edderd.api.nfl.services.NFLLiveGameService;
+import edderd.api.nfl.services.NFLNewsService;
+import edderd.api.nfl.services.NFLWeeklyGameService;
+import edderd.api.nfl.services.PlayerDataRetriever;
+
 @RestController
 public class RequestController {
 	

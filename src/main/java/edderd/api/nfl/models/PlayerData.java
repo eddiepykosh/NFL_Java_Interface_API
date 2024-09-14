@@ -1,4 +1,4 @@
-package edderd.api.nfl;
+package edderd.api.nfl.models;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
